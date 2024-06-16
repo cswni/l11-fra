@@ -32,16 +32,16 @@ COPY ./.docker/php/php.ini /usr/local/etc/php/
 COPY ./.docker/etc/supervisor.d/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 # Install PHP extensions
-RUN pecl install xdebug
+#RUN pecl install xdebug
 
 # Install Laravel dependencies using Composer.
-RUN composer install
+#RUN composer install
 
 # Enable PHP extensions
-RUN docker-php-ext-enable xdebug
+#RUN docker-php-ext-enable xdebug
 
 # Set permissions for Laravel.
-RUN chown -R www-data:www-data storage bootstrap/cache
+#RUN chown -R www-data:www-data storage bootstrap/cache
 
 EXPOSE 80 443
 
